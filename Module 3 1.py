@@ -4,8 +4,6 @@ def string_info():
    print('(', len(string), ", '", string.upper(), ", '", string.lower(), "'", ')')
    global calls
    calls = calls + 1
-
-
 def is_contains():
     string = input('Введите ещё слово: ')
     list_to_search = list(input('Введите слова для сравнения: '))
@@ -18,12 +16,9 @@ def is_contains():
        print(False)
     global calls
     calls = calls + 1
-
-
 def count_calls():
     global calls
     print(calls)
-
 
 string_info()
 string_info()
