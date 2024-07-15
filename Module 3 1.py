@@ -1,7 +1,8 @@
 calls = 0
 def string_info():
    string = input('Введите слово: ')
-   print('(', len(string), ", '", string.upper(), ", '", string.lower(), "'", ')')
+   str_tup = (len(string), string.upper(), string.lower())
+   print(str_tup)
    global calls
    calls = calls + 1
 def is_contains():
