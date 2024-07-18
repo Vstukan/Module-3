@@ -1,28 +1,27 @@
 calls = 0
-def string_info():
-   string = input('Введите слово: ')
-   str_tup = (len(string), string.upper(), string.lower())
-   print(str_tup)
-   global calls
-   calls = calls + 1
-def is_contains():
-    string = input('Введите ещё слово: ')
-    list_to_search = list(input('Введите слова для сравнения: '))
+def count_calls():
+    global calls
+    calls = calls + 1
+
+def string_info(string):
+    count_calls()
+    str_tup = (len(string), string.upper(), string.lower())
+    return (str_tup)
+
+def is_contains(string, list_to_search):
+    count_calls()
     stringUP = string.upper()
     str_to_search = ''.join(list_to_search)
     str_to_searchUP = str_to_search.upper()
     if stringUP in str_to_searchUP:
-        print(True)
+        return True
     else:
-       print(False)
-    global calls
-    calls = calls + 1
-def count_calls():
-    global calls
-    print(calls)
+        return False
 
-string_info()
-string_info()
-is_contains()
-is_contains()
-count_calls()
+
+print(string_info('Capybara'))
+print(string_info('Armageddon'))
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN'])) # Urban ~ urBAN
+print(is_contains('cycle', ['recycling', 'cyclic'])) # No matches
+print(calls)
+
